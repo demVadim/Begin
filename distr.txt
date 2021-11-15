@@ -1,1 +1,5 @@
 cmake .. -G "CodeBlocks - MinGW Makefiles"
+cmake --build .
+
+git remote add glfw https://github.com/glfw/glfw.git     добовляем библиотеку в репозиторий
+git subtree add --prefix=external/glfw glfw master --squash
