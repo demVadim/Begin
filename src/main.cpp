@@ -1,6 +1,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <iostream>
+
 int main(void)
 {
     GLFWwindow* window;
@@ -22,11 +24,11 @@ int main(void)
 
     if(!gladLoadGL())
     {
-        std::out<< "cant load glad" <<std::endl;
+        std::cout << "cant load glad" << std::endl;
         return -1;
     }
 
-    std::out<< "OPENgl"<< GLVersion.major << "." << GLVersion.minor <<std::endl;
+    std::cout << "OPENgl"<< GLVersion.major << "." << GLVersion.minor <<std::endl;
 
     glClearColor(0, 1, 0, 1);
 
