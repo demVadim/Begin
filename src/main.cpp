@@ -9,20 +9,20 @@ int main(void)
     if (!glfwInit())
         return -1;
 
-    glfwWindowHint(GLFW_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_VERSION_MINOR, 4);
     glfwWindowHint(GLFW_VERSION_MINOR, 6);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     /* Create a windowed mode window and its OpenGL context */
-    GLFWwindow* pWndow = glfwCreateWindow(640, 480, "BattleCity", NULL, NULL);
-    if (!window)
+    GLFWwindow* pWindow = glfwCreateWindow(640, 480, "BattleCity", nullptr, nullptr);
+    if (!pWindow)
     {
         glfwTerminate();
         return -1;
     }
 
     /* Make the window's context current */
-    glfwMakeContextCurrent(window);
+    glfwMakeContextCurrent(pWindow);
 
     if(!gladLoadGL())
     {
@@ -30,18 +30,19 @@ int main(void)
         return -1;
     }
 
-    std::cout << "OPENgl"<< GLVersion.major << "." << GLVersion.minor <<std::endl;
-
+    std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
+	std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
+	
     glClearColor(0, 1, 0, 1);
 
     /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(window))
+    while (!glfwWindowShouldClose(pWindow))
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
         /* Swap front and back buffers */
-        glfwSwapBuffers(window);
+        glfwSwapBuffers(pWindow);
 
         /* Poll for and process events */
         glfwPollEvents();
