@@ -9,4 +9,4 @@ set(CMAKE_CXX_STANDART 17)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
-message("Project --- ${PROJECT_NAME} --- cpp version ${CMAKE_CXX_STANDART}")
+message("Project ---- ${PROJECT_NAME} ---- cpp version ${CMAKE_CXX_STANDART}")
