@@ -1,8 +1,9 @@
 #include<iostream>
-#include<limits>
+#include<format>
 
 int main()
 {
-    std::cout << std::numeric_limits<int>::max() << std::endl;
+    int weight = 25;
+    std::cout << std::format("dsdsd: {}", weight ) << std::endl;
     return 0;
 }

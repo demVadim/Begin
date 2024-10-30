@@ -6,13 +6,3 @@ set(PROJECT_NAME BattleArena VERSION 1.0.0)
 project(${PROJECT_NAME})
 
 add_subdirectory(code)
-# common option
-
-
-
-# cpp option 
-set(CMAKE_CXX_STANDART 17)
-
-
-
-message("Project ---- ${PROJECT_NAME} ---- cpp version ${CMAKE_CXX_STANDART}")
