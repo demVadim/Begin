@@ -1,9 +1,9 @@
-# general info
 add_executable(${PROJECT_NAME})
 
-# sources
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
-target_sources(${PROJECT_NAME}          PRIVATE main.cpp)
+target_sources(${PROJECT_NAME} PRIVATE main.cpp)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY_DEBUG "${CMAKE_SOURCE_DIR}/build"
+                                                 RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_SOURCE_DIR}/build")
 
 
 
